@@ -2,10 +2,10 @@
 
 <%= form_for @user do |f|%>
 
-<%=f.label "Username" %>
-<%= f.text_field "username" %>
-<%= f.label "Password" %>
-<%= f.text_field "password_digest" %>
-<%= f.submit "Register!" %>
+  <%=f.label "Username" %>
+  <%= f.text_field "username" %>
+  <%= f.label "Password" %>
+  <%= f.text_field "password_digest" %>
+  <%= f.submit "Login!" %>
 
 <% end %>

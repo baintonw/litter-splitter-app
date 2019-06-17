@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   has_many :cats
   has_many :claims
-  
+  has_secure_password
+
 
   # def selected_cats
   #   self.claims.map { |claim|
