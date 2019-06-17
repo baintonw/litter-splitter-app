@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2019_06_17_135232) do
   create_table "cats", force: :cascade do |t|
     t.string "name"
     t.integer "age"
+    t.string "gender"
     t.string "description"
     t.integer "user_id"
     t.datetime "created_at", null: false
