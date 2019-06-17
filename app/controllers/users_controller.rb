@@ -18,9 +18,11 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-private
-  def user_params
-    params.require(:user).permit(:username, :password_digest)
-  end
 
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :username, :password_digest)
+  end
 end

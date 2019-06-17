@@ -1,11 +1,12 @@
 <h1>Signup Page!</h1>
 
 <%= form_for @user do |f|%>
-
-  <%=f.label "Username" %>
-  <%= f.text_field "username" %>
-  <%= f.label "Password" %>
-  <%= f.text_field "password_digest" %>
-  <%= f.submit "Login!" %>
+<%= f.label "Name" %>
+<%= f.text_field "name" %>
+<%= f.label "Username" %>
+<%= f.text_field "username" %>
+<%= f.label "Password" %>
+<%= f.text_field "password_digest" %>
+<%= f.submit "Register!" %>
 
 <% end %>

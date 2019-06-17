@@ -1,13 +1,11 @@
 <h1>Welcome to Litter Splitter!</h1>
 
-<p>Login: </p>
-<%= form_for @user do |f|%>
-  <%= f.label :Username %>
-  <%= f.text_field :username %>
-  <%= f.label :Password %>
-  <%= f.text_field :password_digest %>
-  <%= f.submit "Register!" %>
+<%=form_tag "/litter" do %>
+  <%= label_tag "Username:"%>
+  <%= text_field_tag "username"%>
+  <%= label_tag "Password"%>
+  <%= text_field_tag "password_digest"%>
+  <%= submit_tag "Submit"%>
+<%end%>
 
-<% end %>
-
-<p>Don't have an account yet? <%=link_to "Sign Up", litter_signup_path, method: "get" %></p>
+<%=link_to "Sign Up", litter_signup_path, method: "get" %>

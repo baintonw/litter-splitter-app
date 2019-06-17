@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   def home
     @user = User.find_by(params[:username])
+
   end
 
   def current_user
@@ -18,5 +19,6 @@ class ApplicationController < ActionController::Base
   def authorized?
     redirect_to signup unless logged_in?
   end
+
 
 end
