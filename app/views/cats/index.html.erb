@@ -1,0 +1,7 @@
+<h1>Hey!</h1>
+
+<% @cats.each do |cat| %>
+
+<li><%=link_to cat.name, cat_path(cat)%></li>
+
+<% end %>

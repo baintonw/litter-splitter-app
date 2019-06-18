@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: "users#show", as: "user"
 
+  get 'cats', to: "cats#index"
+  get 'cats/:id', to: "cats#show", as: "cat"
+
 
 
 
