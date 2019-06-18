@@ -12,17 +12,16 @@ class CatsController < ApplicationController
     @user = User.find(session[:user_id])
     @cat = Cat.find(params[:id])
     @cat.update(:user_id => @user.id)
-    @cat.toggle
     redirect_to user_path(@user)
   end
 
-  def toggle_adoption
+  def toggle_adopted
     if self.adopted?
       self.update(adopted: false)
     else
       self.update(adopted: true)
     end
-  end
+  end#not working
 
   private
 
