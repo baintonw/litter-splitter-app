@@ -1,13 +1,19 @@
-
-<p>Show Page</p>
-My name! <%=@cat.name %>
-My owner! <%= @cat.user.name %>
-
+<h1><%=@cat.name %>'s Page!</h1>
+<br>
+My name: <%=@cat.name %>
+<br>
+My owner: <%= @cat.user.name %>
+<br>
+About me: <%=@cat.description %>
+<br>
+This is me! <br>
+<img  src="<%= @cat.img_url %>" width=300px >
 
 <p>Adopt me! </p>
 
 
 <%= button_to "Adopt", "/adopt/#{@cat.id}", method: "patch" %>
+
 
 <%= button_to "Logout", '/logout', method: "delete" %>
 <%= button_to "Home", litter_path, method: "get"%>
