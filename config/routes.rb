@@ -1,19 +1,17 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :create]
+  resources :users, only: [:index]
 
   get '/litter', to: "application#home"
+  post '/users', to: "users#create"
   get '/litter/signup', to: "users#new"
-  post '/litter', to: "sessions#new", as: "login"
-  post '/litter', to: "sessions#create"
-  post '/litter/signup', to: "users#create"
+  post '/litxter/signup', to: "users#create"
 
-  get '/users/new', to: "users#new", as: "signup"
+  get '/login', to: "sessions#new", as: "login"
+  post '/login', to: "sessions#create"
 
   get '/users/:id', to: "users#show", as: "user"
 
-  post '/users', to: "users#create"
-  patch '/users/:id', to: "users#update"
-  delete '/users/:id', to: "users#destroy"
+
 
 
 

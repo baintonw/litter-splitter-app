@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
   def new
   end
+  
   def create
     #authenticate the user
     @user = User.find_by(params[:username])
