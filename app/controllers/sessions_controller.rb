@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password_digest])
 
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to user_feed_path
     end
   end
 

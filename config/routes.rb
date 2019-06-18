@@ -9,12 +9,16 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: "login"
   post '/login', to: "sessions#create"
 
+  get '/user/feed', to: "users#feed"
+
   get '/users/:id', to: "users#show", as: "user"
 
   get 'cats', to: "cats#index"
   get 'cats/:id', to: "cats#show", as: "cat"
   patch '/adopt/:id', to: "cats#adopt"
   delete '/logout', to: "sessions#destroy"
+
+
 
 
 
