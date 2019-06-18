@@ -12,6 +12,7 @@ class CatsController < ApplicationController
     @user = User.find(session[:user_id])
     @cat = Cat.find(params[:id])
     @cat.update(:user_id => @user.id)
+    # @cat.toggle
     redirect_to user_path(@user)
   end
 
