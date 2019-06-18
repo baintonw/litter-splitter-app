@@ -1,9 +1,11 @@
 user show page!
 <%= @user.name %>
 My cats: <% @user.cats.each do |cat| %>
-<%= cat.name %>
+<li><%= cat.name %></li>
 <% end %>
 
 All other cats: <% @cats.each do |cat| %>
 <li><%= link_to cat.name, cat_path(cat) %></li>
 <% end %>
+
+<%= button_to "Logout", '/logout', method: "delete" %>
