@@ -8,4 +8,5 @@ All other cats: <% @cats.each do |cat| %>
 <li><%= link_to cat.name, cat_path(cat) %></li>
 <% end %>
 
+
 <%= button_to "Logout", '/logout', method: "delete" %>

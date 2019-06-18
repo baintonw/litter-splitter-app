@@ -12,7 +12,16 @@ class CatsController < ApplicationController
     @user = User.find(session[:user_id])
     @cat = Cat.find(params[:id])
     @cat.update(:user_id => @user.id)
+    @cat.toggle
     redirect_to user_path(@user)
+  end
+
+  def toggle_adoption
+    if self.adopted?
+      self.update(adopted: false)
+    else
+      self.update(adopted: true)
+    end
   end
 
   private
@@ -26,3 +35,12 @@ class CatsController < ApplicationController
   end
 
 end
+
+
+# def toggle_active
+#    if @blog.active?
+#      @blog.update(active: false)
+#    else
+#      @blog.update(active: true)
+#    end
+#  end

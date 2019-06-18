@@ -2,6 +2,8 @@ users index page
 
 <% @users.each do |user| %>
 
-<p><%= user.username %></p>
+<p><%=link_to user.username, user_path(user) %></p>
 
 <% end %>
+
+<%= button_to "Logout", '/logout', method: "delete" %>
