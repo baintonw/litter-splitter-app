@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'cats', to: "cats#index"
   get 'cats/:id', to: "cats#show", as: "cat"
+  patch '/cats/:id', to: "cats#update"
+  delete '/logout', to: "sessions#destroy"
 
 
 
