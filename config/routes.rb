@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/litter', to: "application#home"
   post '/users', to: "users#create"
   get '/litter/signup', to: "users#new"
-  post '/litxter/signup', to: "users#create"
+  post '/litter/signup', to: "users#create"
 
   get '/login', to: "sessions#new", as: "login"
   post '/login', to: "sessions#create"
