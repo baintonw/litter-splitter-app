@@ -3,6 +3,8 @@
   <% @user.cats.each do |cat| %>
     <li>Name:<%=link_to cat.name,  cat_path(cat)%></li>
     <li>Adopted? <%= cat.adopted? %></li>
+
+    
   <% end %>
 
 

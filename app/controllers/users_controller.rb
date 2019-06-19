@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :current_user, only: [:show, :feed]
 
   def index
     @users = User.all
@@ -6,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    
     @cats = Cat.all
   end
 
@@ -24,7 +26,7 @@ class UsersController < ApplicationController
     @cats = Cat.all
   end
 
-  
+
 
 
   private

@@ -26,4 +26,23 @@ Things you may want to cover:
 THIS IS A README
 THIS IS STILL A README
 
+## CSS ##
+Selectors:
+- tags
+- .classes
+- #IDs
 flexbox
+-
+  #grid-flex-image {
+    display: flex;
+    flex-direction: column;
+    }
+- helps you to organize your page into boxes
+- organize things in either a column or a row or grid which does both
+- flexboxes only communicate with their direct children
+- defaults to a row
+- img {
+  width: 100px
+  height: 100px
+  }
+- name classes and IDs in html file and call them with . and # in css file

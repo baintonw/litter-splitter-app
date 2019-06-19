@@ -3,7 +3,7 @@
 
 
 <% @cats.each do |cat| %>
-  <%=link_to cat.name, cat_path(cat)%>
-  <img  src="<%= cat.img_url %>" width=300px >
-
+<%=link_to cat.name, cat_path(cat)%>
+<img  src="<%= cat.img_url %>" width=300px >
+Put up:
 <% end %>

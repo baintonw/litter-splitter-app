@@ -5,10 +5,11 @@ class Cat < ApplicationRecord
 
   def release
     if self.adopted?
+      byebug
       self.toggle(:adopted)
-    else
-      puts "Cat not adopted"
+      byebug
+      self.user_id = nil
     end
   end
-  
+
 end

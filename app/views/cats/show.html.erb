@@ -2,7 +2,7 @@
 <br>
 My name: <%=@cat.name %>
 <br>
-My owner: <%= @cat.user.name %>
+My owner: <%= link_to @cat.user.name, "/users/#{@cat.user_id}" %>
 <br>
 About me: <%=@cat.description %>
 <br>
@@ -16,7 +16,3 @@ Am I adopted? <%= @cat.adopted? %>
 
 <%= button_to "Adopt", "/adopt/#{@cat.id}", method: "patch" %>
 <%= button_to "Give", "/release/#{@cat.id}", method: "patch" %>
-
-
-<%= button_to "Logout", '/logout', method: "delete" %>
-<%= button_to "Home", litter_path, method: "get"%>
