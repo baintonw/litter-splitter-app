@@ -5,10 +5,14 @@ class Cat < ApplicationRecord
 
   def release
     if self.adopted?
-      byebug
       self.toggle(:adopted)
-      byebug
-      self.user_id = nil
+    end
+  end
+
+  def self.release_all
+    Cat.all.each do |cat|
+      cat.release
+      cat.save
     end
   end
 
