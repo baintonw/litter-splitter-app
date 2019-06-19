@@ -24,6 +24,8 @@ class UsersController < ApplicationController
     @cats = Cat.all
   end
 
+  
+
 
   private
 

@@ -9,10 +9,13 @@ About me: <%=@cat.description %>
 This is me! <br>
 <img  src="<%= @cat.img_url %>" width=300px >
 
+Am I adopted? <%= @cat.adopted? %>
+
 <p>Adopt me! </p>
 
 
 <%= button_to "Adopt", "/adopt/#{@cat.id}", method: "patch" %>
+<%= button_to "Give", "/release/#{@cat.id}", method: "patch" %>
 
 
 <%= button_to "Logout", '/logout', method: "delete" %>

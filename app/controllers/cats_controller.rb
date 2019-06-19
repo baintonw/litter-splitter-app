@@ -11,18 +11,35 @@ class CatsController < ApplicationController
   def adopt
     @user = User.find(session[:user_id])
     @cat = Cat.find(params[:id])
+    if !@cat.adopted?
+      @cat.toggle(:adopted)
+    end
     @cat.update(:user_id => @user.id)
+
     # @cat.toggle
     redirect_to user_path(@user)
   end
 
-  def toggle_adopted
-    if self.adopted?
-      self.update(adopted: false)
-    else
-      self.update(adopted: true)
-    end
-  end#not working
+  def give_up
+    @user = User.find(session[:user_id])
+    @cat = Cat.find(params[:id])
+    @cat.release
+    @cat.save
+
+    redirect_to user_path(@user)
+  end
+
+
+
+  # def toggle_adopted
+  #   if self.adopted?
+  #     self.update(adopted: false)
+  #   else
+  #     self.update(adopted: true)
+  #   end
+  # end#not working
+
+
 
   private
 

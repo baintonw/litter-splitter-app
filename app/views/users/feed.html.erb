@@ -4,8 +4,11 @@ HOME PAGE
 <h3>Here's who is currently available for adoption:</h3><br>
 
 <% @cats.each do |cat| %>
-<%=link_to cat.name, cat_path(cat)%>
-<img  src="<%= cat.img_url %>" width=300px >
+
+<% if !cat.adopted? %>
+  <%=link_to cat.name, cat_path(cat)%>
+  <img  src="<%= cat.img_url %>" width=300px >
+  <% end %>
 <% end %>
 
 <%= button_to "Logout", '/logout', method: "delete" %>
