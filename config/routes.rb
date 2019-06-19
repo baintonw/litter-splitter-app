@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users, only: [:index]
+  resources :cats, only: [:new, :create]
 
   get '/litter', to: "application#home"#app home page
   post '/users', to: "users#create"
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   get 'cats', to: "cats#index"
   get 'cats/:id', to: "cats#show", as: "cat"#cat profile page
   patch '/adopt/:id', to: "cats#adopt"#adopts a cat based on button push
+  patch '/release/:id', to: "cats#give_up"
   delete '/logout', to: "sessions#destroy"#logs out
 
 
