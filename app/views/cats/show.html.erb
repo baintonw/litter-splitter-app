@@ -2,7 +2,7 @@
 <br>
 My name: <%=@cat.name %>
 <br>
-My owner: <%= @cat.user.name %>
+My owner: <%= link_to @cat.user.name, "/users/#{@cat.user_id}" %>
 <br>
 About me: <%=@cat.description %>
 <br>

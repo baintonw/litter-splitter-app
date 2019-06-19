@@ -6,6 +6,7 @@ class CatsController < ApplicationController
 
   def show
     @cat = Cat.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def adopt
@@ -28,6 +29,7 @@ class CatsController < ApplicationController
 
     redirect_to user_path(@user)
   end
+  #give up should change user_id to nil
 
 
 
