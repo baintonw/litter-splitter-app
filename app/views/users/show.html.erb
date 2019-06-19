@@ -1,12 +1,13 @@
-user show page!
-<%= @user.name %>
-My cats: <% @user.cats.each do |cat| %>
-<li><%= cat.name %></li>
-<% end %>
 
 
-<h1>Welcome to Litter//Splitter!</h1>
-<h3>Here's who is currently available for adoption:</h3><br>
+
+
+<h1>Welcome to Litter//Splitter<%= @user.name %>!</h1>
+<h3>Here are all of your cats:</h3><br>
+  <% @user.cats.each do |cat| %>
+    <li><%= cat.name %></li>
+  <% end %>
+
 
 
 

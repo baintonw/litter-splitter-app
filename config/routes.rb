@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
   resources :users, only: [:index]
 
-  get '/litter', to: "application#home"
+  get '/litter', to: "application#home"#app home page
   post '/users', to: "users#create"
-  get '/litter/signup', to: "users#new"
-  post '/litter/signup', to: "users#create"
+  get '/litter/signup', to: "users#new"#user signup page
+  post '/litter/signup', to: "users#create"#signs up a user
 
-  get '/login', to: "sessions#new", as: "login"
-  post '/login', to: "sessions#create"
+  get '/login', to: "sessions#new", as: "login"#logs in a user
+  post '/login', to: "sessions#create"#logs in a user
 
-  get '/user/:id/feed', to: "users#feed"
+  get '/users/:id/feed', to: "users#feed", as: "user_feed"#user's feed
 
-  get '/users/:id', to: "users#show", as: "user"
+  get '/users/:id', to: "users#show", as: "user"#user's profile
 
   get 'cats', to: "cats#index"
-  get 'cats/:id', to: "cats#show", as: "cat"
-  patch '/adopt/:id', to: "cats#adopt"
-  delete '/logout', to: "sessions#destroy"
+  get 'cats/:id', to: "cats#show", as: "cat"#cat profile page
+  patch '/adopt/:id', to: "cats#adopt"#adopts a cat based on button push
+  delete '/logout', to: "sessions#destroy"#logs out
 
 
 

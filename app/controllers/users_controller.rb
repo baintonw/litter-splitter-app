@@ -16,12 +16,11 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     session[:user_id] = @user.id
-    redirect_to user_path(@user)
+    redirect_to user_feed_path(@user)
   end
 
   def feed
     @user = User.find(params[:id])
-    
     @cats = Cat.all
   end
 
