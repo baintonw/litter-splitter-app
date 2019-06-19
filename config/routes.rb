@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: "login"
   post '/login', to: "sessions#create"
 
-  get '/user/feed', to: "users#feed"
+  get '/user/:id/feed', to: "users#feed"
 
   get '/users/:id', to: "users#show", as: "user"
 

@@ -20,6 +20,8 @@ class UsersController < ApplicationController
   end
 
   def feed
+    @user = User.find(params[:id])
+    
     @cats = Cat.all
   end
 
