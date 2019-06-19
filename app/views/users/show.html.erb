@@ -3,9 +3,9 @@
   <% @user.cats.each do |cat| %>
     <li>Name:<%=link_to cat.name,  cat_path(cat)%></li>
     <li>Adopted? <%= cat.adopted? %></li>
+    <img  src="<%= cat.img_url %>" width=300px >
 
-    
   <% end %>
-
-
+<br>
+<br>
 <%= button_to "Logout", '/logout', method: "delete" %>
