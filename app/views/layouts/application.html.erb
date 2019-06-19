@@ -13,16 +13,20 @@
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="/litter">Litter // Splitter</a>
       <form class="form-inline">
-          <a class="btn btn-outline-primary" href="/litter" role="button">
+          <a class="btn btn-outline-primary" href=<%="/users/#{session[:user_id]}/feed"%> role="button">
+
             Home
           </a>
         <form class="form-inline">
-          <a class="btn btn-outline-success" href="/user" role="button">
+          <a class="btn btn-outline-success" href=<%="/users/#{session[:user_id]}"%> role="button">
             My Profile
           </a>
         <form class="form-inline">
-          <a class="btn btn-outline-success" href="/logout" role="button">
-            Logout
+
+          <%= link_to "Logout", '/logout', :method => 'delete'%>
+
+
+            
           </a>
       </form>
   </nav>
