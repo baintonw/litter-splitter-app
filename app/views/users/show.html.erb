@@ -1,11 +1,17 @@
-<h1>Welcome to Litter//Splitter, <%= @user.name %>!</h1>
-<h3>Here are all of your cats:</h3><br>
+<h2>Hey, <%= @user.name %>!</h2>
+<br>
+<h4>Here are all of your cats:</h4><br>
+<div class="all-cat-grid">
   <% @user.cats.each do |cat| %>
-    <li>Name:<%=link_to cat.name,  cat_path(cat)%></li>
-    <li>Adopted? <%= cat.adopted? %></li>
-    <img  src="<%= cat.img_url %>" width=300px >
-
+  <div class="cat-card">
+    <p><b>My name: </b><%=link_to cat.name, cat_path(cat)%></p>
+    <img  src="<%= cat.img_url %>" >
+    <div class="cat-card-info">
+      <p><b>Am I adopted? </b><%= cat.adopted? %></p>
+      <p><b>About me: </b><%=cat.description.truncate(55) %></p>
+    </div>
+  </div>
   <% end %>
+</div>
 <br>
 <br>
-<%= button_to "Logout", '/logout', method: "delete" %>

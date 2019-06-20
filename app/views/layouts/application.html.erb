@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>Litter//Splitter</title>
@@ -10,12 +9,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="/litter">Litter // Splitter</a>
+      <a class="navbar-brand" href="/litter"><h1>Litter // Splitter</h1></a>
       <form class="form-inline">
           <a class="btn btn-outline-primary" href=<%="/users/#{session[:user_id]}/feed"%> role="button">
-
             Home
           </a>
         <form class="form-inline">
@@ -23,16 +21,22 @@
             My Profile
           </a>
         <form class="form-inline">
-
+          <a class="btn btn-outline-success"
           <%= link_to "Logout", '/logout', :method => 'delete'%>
-
-
-            
           </a>
-      </form>
-  </nav>
+        </form>
+      </nav>
+<body>
 <div class="container">
   <%= yield %>
 </div>
 </body>
+<footer>
+  <p> <a class="btn btn-outline-success"
+  <%= link_to "Logout", '/logout', :method => 'delete'%>
+  </a></p>
+  <p>Contact us:
+    <a href="mailto:contact@littersplitter.com">
+    contact@littersplitter.com</a>.</p>
+</footer>
 </html>
