@@ -26,6 +26,15 @@ Things you may want to cover:
 THIS IS A README
 THIS IS STILL A README
 
+To-do Friday:
+- "give" cat still showing on user's show page
+- post new cat
+  - need button
+  - need new create_cat_params method with all atributes
+  - need route
+  - how to only allow 300x300px img?
+- make navbar and footer only show when in session
+
 ## CSS ##
 Selectors:
 - tags

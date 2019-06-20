@@ -2,6 +2,7 @@
 <h2><%=@cat.name%>'s Page</h2>
 <br>
 <p><b>My name: </b><%=@cat.name %></p>
+<p><b>My age: </b><%=@cat.age %></p>
 <p><b>My owner: </b><%= link_to @cat.user.name, "/users/#{@cat.user_id}" %></p>
 <p><b>About me: </b><%=@cat.description %></p>
 <p><b>Am I adopted? </b><%= @cat.adopted? %></p>

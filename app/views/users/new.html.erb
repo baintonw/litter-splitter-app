@@ -1,12 +1,16 @@
-<h1>Signup Below!</h1>
+<h2>Post a New Cat Below!</h2>
 
-<%= form_for @user do |f|%>
+<%= form_for @cat do |f|%>
 <%= f.label "Name" %>
 <%= f.text_field "name" %>
-<%= f.label "Username" %>
-<%= f.text_field "username" %>
-<%= f.label "Password" %>
-<%= f.text_field "password" %>
-<%= f.submit "Register!" %>
+<%= f.label "Age" %>
+<%= f.integer "age" %>
+<%= f.label "Gender" %>
+<%= f.text_field "gender" %>
+<%= f.label "Description" %>
+<%= f.text_field "description" %>
+<%= f.label "Upload an image" %>
+<%= f.text_field "img_url" %>
+<%= f.submit "Post" %>
 
 <% end %>
