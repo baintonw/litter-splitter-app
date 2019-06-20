@@ -6,7 +6,7 @@
 
 <% if !cat.adopted? %>
   <%=link_to cat.name, cat_path(cat)%>
-  <img  src="<%= cat.img_url %>" width=300px >
+    <img  src="<%= cat.img_url %>" width=300px >
   <% end %>
 <% end %>
 

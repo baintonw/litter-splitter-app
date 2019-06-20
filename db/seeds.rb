@@ -8,10 +8,11 @@
 User.destroy_all
 Cat.destroy_all
 
-User.create(name: "Jaimie", username: "jaimietn@gmail.com", password_digest: "1234")
-User.create(name: "Will", username: "baintonw@gmail.com", password_digest: "will1")
-User.create(name: "Yana", username: "yana@gmail.com", password_digest: "yana1")
-User.create(name: "Matt", username: "matt@gmail.com", password_digest: "matt1")
+User.create(name: "Jaimie", username: "jaimietn@gmail.com", password: "1234")
+User.create(name: "Will", username: "baintonw@gmail.com", password: "will1")
+User.create(name: "Yana", username: "yana@gmail.com", password: "yana1")
+User.create(name: "Matt", username: "matt@gmail.com", password: "matt1")
+
 puts "Made users!"
 
 Cat.create(name: "Monkey", age: 2, gender: "male", description: "sweet little baby", user_id: 1, img_url: "/assets/Monkey.JPG", adopted: false)
@@ -23,5 +24,5 @@ Cat.create(name: "Steve", age: 17, gender: "male", description: "papi", user_id:
 Cat.create(name: "Sylvester", age: 4, gender: "male", description: "whiny", user_id: 2, img_url: "/assets/Sylvester.jpg", adopted: false)
 puts "Made cats!"
 
-Claim.create(user_id: 1, cat_id: 7)
+Claim.create(user_id: 1, cat_id: 7, active: false)
 puts "Made claims!"

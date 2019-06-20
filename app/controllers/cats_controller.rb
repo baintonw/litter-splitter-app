@@ -7,29 +7,12 @@ class CatsController < ApplicationController
   def show
     @cat = Cat.find(params[:id])
     @user = User.find(session[:user_id])
+
   end
 
-  def adopt
-    @user = User.find(session[:user_id])
-    @cat = Cat.find(params[:id])
-    if !@cat.adopted?
-      @cat.toggle(:adopted)
-    end
-    @cat.update(:user_id => @user.id)
 
-    # @cat.toggle
-    redirect_to user_path(@user)
-  end
-
-  def give_up
-    @user = User.find(session[:user_id])
-    @cat = Cat.find(params[:id])
-    @cat.release
-    @cat.save
-
-    redirect_to user_path(@user)
-  end
   #give up should change user_id to nil
+
 
 
 

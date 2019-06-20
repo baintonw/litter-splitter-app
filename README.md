@@ -26,6 +26,9 @@ Things you may want to cover:
 THIS IS A README
 THIS IS STILL A README
 
+potential_adopt = User.find(params[:claim_id])
+  adopt_request = potential_adopt.claims.find(params[:id])
+
 ## CSS ##
 Selectors:
 - tags

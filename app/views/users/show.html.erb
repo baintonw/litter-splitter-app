@@ -1,11 +1,36 @@
-<h1>Welcome to Litter//Splitter, <%= @user.name %>!</h1>
-<h3>Here are all of your cats:</h3><br>
-  <% @user.cats.each do |cat| %>
-    <li>Name:<%=link_to cat.name,  cat_path(cat)%></li>
-    <li>Adopted? <%= cat.adopted? %></li>
-    <img  src="<%= cat.img_url %>" width=300px >
+<h1>Litter//Splitter</h1>
+<h2><%= @user.name %>'s Profile</h2>
 
+<h3>Here are all of your cats:</h3><br>
+
+<p>My Cats: <% @user.owned_cats.each do |cat| %>
+      <li>Name:<%=link_to cat.name, cat_path(cat)%></li>
+      <li>Adopted? <%= cat.adopted? %></li>
+      <img  src="<%= cat.img_url %>" width=300px >
+    <% end %>
+
+
+
+<p>Requests: </p> <% @user.claims.each do |claim| %>
+ <% if !claim.active? %>
+    <li><%= claim.cat.name %></li>
+    <% end %>
+<% end %>
+
+<p>Adoptions: </p><%= Claim.claimed_cats & @user.owned_cats%>
+
+<% @user.owned_cats.each do |cat| %>
+<h5><%= cat.name %></h5>
+<ul>
+  <% cat.claims.each do |claim| %>
+  <li><%= claim.user.name %></li>
+  <%= button_to "Accept", "/claims/#{claim.id}", method: "patch" %>
   <% end %>
+</ul>
+<% end %>
+
+
+
 <br>
 <br>
 <%= button_to "Logout", '/logout', method: "delete" %>
