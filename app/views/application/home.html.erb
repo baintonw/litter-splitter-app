@@ -1,5 +1,4 @@
-<h1>Welcome to Litter Splitter!</h1>
-
+<br>
 <%=form_tag "/login" do %>
   <%= label_tag "Username:"%>
   <%= text_field_tag "username"%>
@@ -7,5 +6,14 @@
   <%= text_field_tag "password_digest"%>
   <%= submit_tag "Submit"%>
 <%end%>
+<br>
+<div class="signup-div">
+  <p class="signup-div-card"> Don't have an account yet? </p>
+  <form class="signup-div-card" method="get" action="/litter/signup"> <input type="submit" value="Sign Up"></form>
+</div>
 
-<%=link_to "Sign Up", litter_signup_path, method: "get" %>
+<h2>Well hello, there!</h2>
+
+<div id="greeting-cat-gif">
+  <img src="/assets/hello-cat.gif" alt="Happy kitty." style="width: 440px; height: 550px;">
+</div>

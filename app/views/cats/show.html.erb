@@ -1,18 +1,13 @@
-<h1><%=@cat.name %> needs some love</h1>
 <br>
-My name: <%=@cat.name %>
+<h2><%=@cat.name%>'s Page</h2>
 <br>
-My owner: <%= link_to @cat.user.name, "/users/#{@cat.user_id}" %>
-<br>
-About me: <%=@cat.description %>
-<br>
-This is me! <br>
+<p><b>My name: </b><%=@cat.name %></p>
+<p><b>My owner: </b><%= link_to @cat.user.name, "/users/#{@cat.user_id}" %></p>
+<p><b>About me: </b><%=@cat.description %></p>
+<p><b>Am I adopted? </b><%= @cat.adopted? %></p>
+<p><b>This is me! </b></p>
 <img  src="<%= @cat.img_url %>" width=300px >
-
-Am I adopted? <%= @cat.adopted? %>
-
-<p>Adopt me! </p>
-
+<p><b>Adopt me!</b></p>
 
 <%= button_to "Adopt", "/adopt/#{@cat.id}", method: "patch" %>
 <%= button_to "Give", "/release/#{@cat.id}", method: "patch" %>

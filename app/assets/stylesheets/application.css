@@ -13,3 +13,67 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+.btn {
+  margin-left: 10px;
+}
+
+.all-cat-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.cat-card-info {
+  width: 300px;
+}
+
+#greeting-cat-gif {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.signup-div{
+  display: flex;
+  width: 40%;
+}
+
+.signup-div-card{
+  flex-direction: row;
+  margin-right: 10px;
+}
+
+.button_to {
+  left: 30%;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+}
+
+h2 {
+  margin-top: 25px;
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+footer {
+  display: block;
+  text-align: center;
+}

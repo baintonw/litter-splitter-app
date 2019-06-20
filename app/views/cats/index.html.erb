@@ -1,9 +1,13 @@
 <h1>Welcome to Litter//Splitter!</h1>
+<br>
 <h3>Here's who is currently available for adoption:</h3><br>
 
 
-<% @cats.each do |cat| %>
-<%=link_to cat.name, cat_path(cat)%>
-<img  src="<%= cat.img_url %>" width=300px >
-Put up:
-<% end %>
+  <% @cats.each do |cat| %>
+  <%=link_to cat.name, cat_path(cat)%>
+  <img  src="<%= cat.img_url %>" >
+  <p>
+    Put up:
+  </p>
+  <% end %>
+</div>
