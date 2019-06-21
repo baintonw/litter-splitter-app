@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :cats, through: :claims
   validates :username, uniqueness: true
   has_secure_password
-  
+
 
   def unique_cats
     self.cats.uniq
@@ -35,17 +35,18 @@ class User < ApplicationRecord
     end
   end
 
+  def claimed_cats
+    self.claims.each do |claim|
+      claim.cat
+    end
+  end
+
   def cat_claim_ids
     self.claims.all.map do |claim|
       claim.cat_id
     end
   end#an ARRAY that contains all cat_IDs from self.claims WORKS
 
-  # def selected_cats
-  #   self.claims.map { |claim|
-  #       claim.cat
-  #     }
-  # end
 end
 #potential_adopt = User.find(params[:claim_id])
   # adopt_request = potential_adopt.claims.find(params[:id])

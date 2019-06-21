@@ -8,12 +8,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @cats = Cat.all
-
-    # @user.claims.each do |claim|
-    #   @claims << claim.cat.name
-    # end
-    # @claims
-
   end
 
   def new
@@ -31,17 +25,6 @@ class UsersController < ApplicationController
     @cats = Cat.all
   end
 
-  #user actions
-
-  def adopt
-    @user = User.find(session[:user_id])
-    @cat = Cat.find(params[:id])
-    @claim = Claim.create(:user_id => session[:user_id], :cat_id => @cat.id, :active => false)
-    redirect_to user_path(session[:user_id])
-  end
-
-
-  
 
   def give_up
     @user = User.find(session[:user_id])
@@ -51,12 +34,20 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def toggle_adoption
+    @user = User.find(session[:user_id])
+    @cat = Cat.find(params[:id])
+    @cat.toggle_adopted
+    @cat.save
+    redirect_to user_path(@user)
+  end
+
 
 
 
   private
-
   def user_params
     params.require(:user).permit(:name, :username, :password)
   end
+
 end

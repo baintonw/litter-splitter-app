@@ -2,12 +2,14 @@
 <br>
 <h4>Here are all of your cats:</h4><br>
 <div class="all-cat-grid">
-  <% @user.cats.each do |cat| %>
+  <% @user.owned_cats.each do |cat| %>
   <div class="cat-card">
     <p><b>My name: </b><%=link_to cat.name, cat_path(cat)%></p>
     <img  src="<%= cat.img_url %>" >
     <div class="cat-card-info">
       <p><b>Am I adopted? </b><%= cat.adopted? %></p>
+      <p><b></b><%= button_to "Pick up #{cat.name}", "/toggle_adoption/#{cat.id}", method: "patch"%></p>
+      <p><b></b><%= button_to "Release #{cat.name}", "/release/#{cat.id}", method: "patch"%></p>
       <p><b>About me: </b><%=cat.description.truncate(55) %></p>
     </div>
   </div>
@@ -16,13 +18,25 @@
 <br>
 <br>
 
-<p>Adoptions: </p><%= Claim.claimed_cats & @user.owned_cats%>
+<p>I want these cats: </p>
 
+<% @user.claims.each do |claim| %>
+
+  <%= claim.cat.name %>
+  <img  src="<%= claim.cat.img_url %>">
+
+<% end %>
+
+<br>
+<p>Requests for adoption: </p>
+<br>
 <% @user.owned_cats.each do |cat| %>
-<h5><%= cat.name %></h5>
+
+
 <ul>
   <% cat.claims.each do |claim| %>
-  <li><%= claim.user.name %></li>
+  <h5><%=link_to claim.cat.name, cat_path(claim.cat) %></h5>
+  <li><%=link_to claim.user.name, user_path(claim.user) %></li>
   <%= button_to "Accept", "/claims/#{claim.id}", method: "patch" %>
   <% end %>
 </ul>
