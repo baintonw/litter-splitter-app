@@ -11,10 +11,7 @@
 <br>
 <%= f.label "Upload an image link:" %>
 <%= f.text_field "img_url" %>
-<%= f.label "Please select the current owner: " %>
-<%=f.collection_select(:user_id, User.all, :id, :name, prompt:true)%>
-
-
+<%= f.hidden_field :user_id, :value => @user.id%>
 <br>
 <%= f.label "Cat's Description: " %>
 <br>

@@ -14,4 +14,27 @@
   <% end %>
 </div>
 <br>
+<h4>Here are the cats you want:</h4><br>
+<div class="all-cat-grid">
+  <% @user.claims.each do |claim| %>
+  <div class="cat-card">
+    <p><b>My name: </b><%=link_to claim.cat.name, cat_path(claim.cat)%></p>
+    <img src="<%= claim.cat.img_url %>" >
+    <div class="cat-card-info">
+      <p><b>Am I adopted? </b><%= cat.adopted? %></p>
+      <p><b>About me: </b><%=cat.description.truncate(55) %></p>
+    </div>
+  </div>
+  <% end %>
 <br>
+<h4>Requests to adopt your cats: </h4><br>
+<div class="all-cat-grid">
+  <% @user.owned_cats.each do |cat| %>
+    <% cat.claims.each do |claim| %>
+    <div class="cat-card">
+      <p><b>My name: </b><%=link_to claim.cat.name, cat_path(claim.cat) %></p>
+      <img src="<%=claim.cat.img_url%>"
+      <p><b>Requester's name: </b> <%=link_to claim.user.name, user_path(claim.user) %> </p>
+      <%= button_to "Accept", "/claims/#{claim.id}", method: "patch" %>
+    <% end %>
+<% end %>
