@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: "login"#logs in a user
   post '/login', to: "sessions#create"#logs in a user
 
-  get '/users/:id/feed', to: "users#feed", as: "user_feed"#user's feed
 
   get '/users/:id', to: "users#show", as: "user"#user's profile
+  get '/users/:id/feed', to: "users#feed", as: "user_feed"#user's feed
 
   get 'cats', to: "cats#index"
 

@@ -6,6 +6,7 @@ class CatsController < ApplicationController
 
   def new
     @cat = Cat.new
+
     @user = User.find(session[:user_id])
   end
 
@@ -17,8 +18,9 @@ class CatsController < ApplicationController
   def show
     @cat = Cat.find(params[:id])
     @user = User.find(session[:user_id])
-
   end
+
+
 
 
   #give up should change user_id to nil
