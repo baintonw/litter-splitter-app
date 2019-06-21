@@ -20,22 +20,29 @@
 
 <p>I want these cats: </p>
 
-<% @user.claims.each do |claim| %>
+<div class="all-cat-grid">
+  <% @user.claims.each do |claim| %>
+  <div class="cat-card">
+    <p><b>My name: </b><%=link_to claim.cat.name, cat_path(claim.cat)%></p>
+    <img  src="<%= claim.cat.img_url %>" >
+    <div class="cat-card-info">
 
-  <%= claim.cat.name %>
-  <img  src="<%= claim.cat.img_url %>">
 
-<% end %>
+
+  <% end %>
 
 <br>
 <p>Requests for adoption: </p>
 <br>
+
+
 <% @user.owned_cats.each do |cat| %>
 
 
 <ul>
   <% cat.claims.each do |claim| %>
   <h5><%=link_to claim.cat.name, cat_path(claim.cat) %></h5>
+  <img src="<%=claim.cat.img_url%>"
   <li><%=link_to claim.user.name, user_path(claim.user) %></li>
   <%= button_to "Accept", "/claims/#{claim.id}", method: "patch" %>
   <% end %>
