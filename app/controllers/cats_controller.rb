@@ -10,8 +10,7 @@ class CatsController < ApplicationController
   end
 
   def create
-    @cat = Cat.create(cat_params)
-    session[:user_id] = @user.id
+    @cat = Cat.create(create_cat_params)
     redirect_to cat_path(@cat)
   end
 
