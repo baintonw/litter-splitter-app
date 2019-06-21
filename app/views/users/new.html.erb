@@ -9,6 +9,7 @@
 <%= f.text_field "gender" %>
 <%= f.label "Description" %>
 <%= f.text_field "description" %>
+<%= f.integer "user.id" == @user.id %>
 <%= f.label "Upload an image" %>
 <%= f.text_field "img_url" %>
 <%= f.submit "Post" %>
