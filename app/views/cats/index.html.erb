@@ -3,11 +3,11 @@
 <h3>Here's who is currently available for adoption:</h3><br>
 
 
-  <% @cats.each do |cat| %>
+<% @cats.each do |cat| %>
   <%=link_to cat.name, cat_path(cat)%>
   <img  src="<%= cat.img_url %>" >
   <p>
     Put up:
   </p>
-  <% end %>
+<% end %>
 </div>

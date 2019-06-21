@@ -21,8 +21,8 @@
     <p><b>My name: </b><%=link_to claim.cat.name, cat_path(claim.cat)%></p>
     <img src="<%= claim.cat.img_url %>" >
     <div class="cat-card-info">
-      <p><b>Am I adopted? </b><%= cat.adopted? %></p>
-      <p><b>About me: </b><%=cat.description.truncate(55) %></p>
+      <p><b>Am I adopted? </b><%= claim.cat.adopted? %></p>
+      <p><b>About me: </b><%=claim.cat.description.truncate(55) %></p>
     </div>
   </div>
   <% end %>
