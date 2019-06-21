@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_06_20_151239) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.string "password_digest"
+    t.password_field "password_digest"
   end
 
 end
