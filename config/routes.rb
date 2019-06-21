@@ -10,9 +10,15 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new", as: "login"#logs in a user
   post '/login', to: "sessions#create"#logs in a user
 
-  get '/users/:id/feed', to: "users#feed", as: "user_feed"#user's feed
 
   get '/users/:id', to: "users#show", as: "user"#user's profile
+  get '/users/:id/feed', to: "users#feed", as: "user_feed"#user's feed
+
+  get 'cats', to: "cats#index"
+
+  patch '/adopt/:id', to: "claims#adopt"#adopts a cat based on button push
+  patch '/release/:id', to: "users#give_up"
+  patch '/toggle_adoption/:id', to: "users#toggle_adoption"
 
   get '/cats/new', to: "cats#new"
   post '/cats/new', to: "cats#new"
@@ -22,6 +28,10 @@ Rails.application.routes.draw do
   patch '/adopt/:id', to: "cats#adopt"#adopts a cat based on button push
   patch '/release/:id', to: "cats#give_up"
   delete '/logout', to: "sessions#destroy", as: "logout"
+
+  patch '/claims/:id', to: "claims#accept"
+
+
 
 
 

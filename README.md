@@ -26,6 +26,13 @@ Things you may want to cover:
 THIS IS A README
 THIS IS STILL A README
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+potential_adopt = User.find(params[:claim_id])
+  adopt_request = potential_adopt.claims.find(params[:id])
+=======
+=======
+>>>>>>> d082addbeb961ddee05c0e37551dffdd78674366
 To-do Friday:
 - "give" cat still showing on user's show page
 - post new cat
@@ -34,6 +41,10 @@ To-do Friday:
   - need route
   - how to only allow 300x300px img?
 - make navbar and footer only show when in session
+<<<<<<< HEAD
+>>>>>>> d082addbeb961ddee05c0e37551dffdd78674366
+=======
+>>>>>>> d082addbeb961ddee05c0e37551dffdd78674366
 
 ## CSS ##
 Selectors:
