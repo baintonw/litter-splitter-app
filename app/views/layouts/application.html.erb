@@ -9,7 +9,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="/litter"><h1>Litter // Splitter</h1></a>
       <form class="form-inline">
@@ -19,6 +18,10 @@
         <form class="form-inline">
           <a class="btn btn-outline-success" href=<%="/users/#{session[:user_id]}"%> role="button">
             My Profile
+          </a>
+        <form class="form-inline">
+          <a class="btn btn-outline-success"
+          <%= link_to "Add a Cat", '/cats/new', :method =>'post'%>
           </a>
         <form class="form-inline">
           <a class="btn btn-outline-success"

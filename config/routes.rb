@@ -15,11 +15,18 @@ Rails.application.routes.draw do
   get '/users/:id', to: "users#show", as: "user"#user's profile
 
   get 'cats', to: "cats#index"
-  get 'cats/:id', to: "cats#show", as: "cat"#cat profile page
 
   patch '/adopt/:id', to: "claims#adopt"#adopts a cat based on button push
   patch '/release/:id', to: "users#give_up"
   patch '/toggle_adoption/:id', to: "users#toggle_adoption"
+
+  get '/cats/new', to: "cats#new"
+  post '/cats/new', to: "cats#new"
+
+  get '/cats', to: "cats#index"
+  get '/cats/:id', to: "cats#show", as: "cat"#cat profile page
+  patch '/adopt/:id', to: "cats#adopt"#adopts a cat based on button push
+  patch '/release/:id', to: "cats#give_up"
   delete '/logout', to: "sessions#destroy", as: "logout"
 
   patch '/claims/:id', to: "claims#accept"

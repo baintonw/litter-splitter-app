@@ -8,7 +8,7 @@
     <img  src="<%= cat.img_url %>" >
     <div class="cat-card-info">
       <p><b>Am I adopted? </b><%= cat.adopted? %></p>
-      <p><b></b><%= button_to "Pick up #{cat.name}", "/toggle_adoption/#{cat.id}", method: "patch"%></p>
+      <p><b></b><%= button_to "Claim #{cat.name}", "/toggle_adoption/#{cat.id}", method: "patch"%></p>
       <p><b></b><%= button_to "Release #{cat.name}", "/release/#{cat.id}", method: "patch"%></p>
       <p><b>About me: </b><%=cat.description.truncate(55) %></p>
     </div>
@@ -18,7 +18,7 @@
 <br>
 <br>
 
-<p>I want these cats: </p>
+<h4>I want these cats: </h4>
 
 <div class="all-cat-grid">
   <% @user.claims.each do |claim| %>
@@ -26,13 +26,10 @@
     <p><b>My name: </b><%=link_to claim.cat.name, cat_path(claim.cat)%></p>
     <img  src="<%= claim.cat.img_url %>" >
     <div class="cat-card-info">
-
-
-
   <% end %>
 
 <br>
-<p>Requests for adoption: </p>
+<h4>Requests for adoption: </h4>
 <br>
 
 

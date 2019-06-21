@@ -4,6 +4,16 @@ class CatsController < ApplicationController
     @cats = Cat.all
   end
 
+  def new
+    @cat = Cat.new
+    @user = User.find(session[:user_id])
+  end
+
+  def create
+    @cat = Cat.create(create_cat_params)
+    redirect_to cat_path(@cat)
+  end
+
   def show
     @cat = Cat.find(params[:id])
     @user = User.find(session[:user_id])
@@ -36,8 +46,11 @@ class CatsController < ApplicationController
     params.require(:cat).permit(:id, :user_id)
   end
 
+  def create_cat_params
+    params.require(:cat).permit(:name, :age, :gender, :description, :user_id, :img_url)
+  end
+#need to add name, age, gender, description, and session[:user_id] img_url to params to create new cat
 end
-
 
 # def toggle_active
 #    if @blog.active?
