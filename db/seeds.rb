@@ -8,10 +8,10 @@
 User.destroy_all
 Cat.destroy_all
 
-User.create(name: "Jaimie", username: "jaimietn@gmail.com", password: "1234")
-User.create(name: "Will", username: "baintonw@gmail.com", password: "will1")
-User.create(name: "Yana", username: "yana@gmail.com", password: "yana1")
-User.create(name: "Matt", username: "matt@gmail.com", password: "matt1")
+User.create(name: "Jaimie", username: "Jaimie", password: "123")
+User.create(name: "Will", username: "Will", password: "123")
+User.create(name: "Yana", username: "Yana", password: "123")
+User.create(name: "Matt", username: "Matt", password: "123")
 
 puts "Made users!"
 

@@ -1,47 +1,53 @@
-<h2>Hey, <%= @user.name %>!</h2>
+<h2><%= @user.name %>'s Page</h2>
 <br>
-<h4>Here are all of your cats:</h4><br>
+<h4>Here are all of <%= "#{@user.name}" %>'s cats:</h4><br>
 <div class="all-cat-grid">
   <% @user.owned_cats.each do |cat| %>
   <div class="cat-card">
     <p><b>My name: </b><%=link_to cat.name, cat_path(cat)%></p>
     <img  src="<%= cat.img_url %>" >
     <div class="cat-card-info">
-      <p><b>Am I adopted? </b><%= cat.adopted? %></p>
-      <p><b></b><%= button_to "Claim #{cat.name}", "/toggle_adoption/#{cat.id}", method: "patch"%></p>
-      <p><b></b><%= button_to "Release #{cat.name}", "/release/#{cat.id}", method: "patch"%></p>
-      <p><b>About me: </b><%=cat.description.truncate(55) %></p>
+      <p><b>Am I up for adoption? </b><%= !cat.adopted? %></p>
+      <p><b>About me: </b><%=cat.description.truncate(30) %></p>
+      <% if @viewer.id == @user.id%>
+        <p><b></b><%= button_to "Claim #{cat.name}", "/toggle_adoption/#{cat.id}", method: "patch"%></p>
+        <p><b></b><%= button_to "Release #{cat.name}", "/release/#{cat.id}", method: "patch"%></p>
+      <% end %>
     </div>
   </div>
   <% end %>
+
 </div>
 <br>
 <br>
 
-<h4>I want these cats: </h4>
-
+<h4>Cats I want to adopt: </h4>
+<br>
 <div class="all-cat-grid">
   <% @user.claims.each do |claim| %>
   <div class="cat-card">
     <p><b>My name: </b><%=link_to claim.cat.name, cat_path(claim.cat)%></p>
+    <p><b>Current owner: </b><%= link_to claim.user.name, user_path(claim.user) %></p>
     <img  src="<%= claim.cat.img_url %>" >
     <div class="cat-card-info">
+
+      <p><b>About me: </b><%=claim.cat.description.truncate(30) %></p>
+    </div>
+  </div>
   <% end %>
+</div>
 
 <br>
-<h4>Requests for adoption: </h4>
-<br>
-
-
+<h4>Requests to adopt your cats: </h4><br>
+<div class="all-cat-grid">
 <% @user.owned_cats.each do |cat| %>
-
-
-<ul>
   <% cat.claims.each do |claim| %>
-  <h5><%=link_to claim.cat.name, cat_path(claim.cat) %></h5>
-  <img src="<%=claim.cat.img_url%>"
-  <li><%=link_to claim.user.name, user_path(claim.user) %></li>
-  <%= button_to "Accept", "/claims/#{claim.id}", method: "patch" %>
-  <% end %>
-</ul>
-<% end %>
+    <div class="cat-card">
+      <p><b>My name: </b><%=link_to claim.cat.name, cat_path(claim.cat) %></p>
+      <img src="<%=claim.cat.img_url%>">
+      <p><b> Requester's name: </b> <%=link_to claim.user.name, user_path(claim.user) %> </p>
+      <%= button_to "Accept", "/claims/#{claim.id}", method: "patch" %>
+    </div>
+      <% end %>
+    <% end %>
+  </div>
