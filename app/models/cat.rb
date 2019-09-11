@@ -25,7 +25,7 @@ class Cat < ApplicationRecord
   end#redundant?
 
   def toggle_adopted
-    self.toggle(:adopted)
+    self.update(:adopted => true)
     # if !@cat.adopted?
     #   @cat.toggle(:adopted)
     #   @cat.save

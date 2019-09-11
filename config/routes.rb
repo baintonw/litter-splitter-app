@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users, only: [:index]
-  resources :cats, only: [:new, :create]
+  resources :cats, only: [:new, :create, :delete]
 
   get '/litter', to: "application#home"#app home page
   post '/users', to: "users#create"

@@ -7,8 +7,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @viewer = User.find(session[:user_id])
     @cats = Cat.all
-    
+
     #if session user matches @user
   end
 
