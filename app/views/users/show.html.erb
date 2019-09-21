@@ -27,7 +27,7 @@
   <% @user.claims.each do |claim| %>
   <div class="cat-card">
     <p><b>My name: </b><%=link_to claim.cat.name, cat_path(claim.cat)%></p>
-    <p><b>Current owner: </b><%= link_to claim.user.name, user_path(claim.user) %></p>
+    <p><b>Current owner: </b><%= link_to claim.cat.user.name, user_path(claim.cat.user) %></p>
     <img  src="<%= claim.cat.img_url %>" >
     <div class="cat-card-info">
 

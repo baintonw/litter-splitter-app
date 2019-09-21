@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Cat.destroy_all
+Claim.destroy_all
 
 User.create(name: "Jaimie", username: "Jaimie", password: "123")
 User.create(name: "Will", username: "Will", password: "123")
