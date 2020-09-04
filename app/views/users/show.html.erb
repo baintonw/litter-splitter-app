@@ -7,35 +7,27 @@
     <p><b>My name: </b><%=link_to cat.name, cat_path(cat)%></p>
     <img  src="<%= cat.img_url %>" >
     <div class="cat-card-info">
-<<<<<<< HEAD
-      <p><b>Am I adopted? </b><%= cat.adopted? %></p>
-      <p><b>About me: </b><%=cat.description.truncate(55) %></p>
-=======
       <p><b>Am I up for adoption? </b><%= !cat.adopted? %></p>
       <p><b>About me: </b><%=cat.description.truncate(30) %></p>
       <% if @viewer.id == @user.id%>
         <p><b></b><%= button_to "Claim #{cat.name}", "/toggle_adoption/#{cat.id}", method: "patch"%></p>
         <p><b></b><%= button_to "Release #{cat.name}", "/release/#{cat.id}", method: "patch"%></p>
       <% end %>
->>>>>>> willjaimie-test
     </div>
   </div>
   <% end %>
 
 </div>
 <br>
-<<<<<<< HEAD
-<h4>Here are the cats you want:</h4><br>
-=======
 <br>
 
 <h4>Cats I want to adopt: </h4>
 <br>
->>>>>>> willjaimie-test
 <div class="all-cat-grid">
   <% @user.claims.each do |claim| %>
   <div class="cat-card">
     <p><b>My name: </b><%=link_to claim.cat.name, cat_path(claim.cat)%></p>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <img src="<%= claim.cat.img_url %>" >
     <div class="cat-card-info">
@@ -58,6 +50,9 @@
 <% end %>
 =======
     <p><b>Current owner: </b><%= link_to claim.user.name, user_path(claim.user) %></p>
+=======
+    <p><b>Current owner: </b><%= link_to claim.cat.user.name, user_path(claim.cat.user) %></p>
+>>>>>>> willjaimie-test
     <img  src="<%= claim.cat.img_url %>" >
     <div class="cat-card-info">
 

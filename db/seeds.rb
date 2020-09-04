@@ -7,11 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Cat.destroy_all
+Claim.destroy_all
 
-User.create(name: "Jaimie", username: "Jaimie", password: "123")
-User.create(name: "Will", username: "Will", password: "123")
-User.create(name: "Yana", username: "Yana", password: "123")
-User.create(name: "Matt", username: "Matt", password: "123")
+User.create(name: "Jaimie", username: "Jaimie", password: "456")
+User.create(name: "Will", username: "Will", password: "456")
+User.create(name: "Yana", username: "Yana", password: "456")
+User.create(name: "Matt", username: "Matt", password: "456")
 
 puts "Made users!"
 
