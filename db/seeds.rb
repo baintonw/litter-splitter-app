@@ -9,10 +9,12 @@ User.destroy_all
 Cat.destroy_all
 Claim.destroy_all
 
-User.create(name: "Jaimie", username: "Jaimie", password: "123")
-User.create(name: "Will", username: "Will", password: "123")
-User.create(name: "Yana", username: "Yana", password: "123")
-User.create(name: "Matt", username: "Matt", password: "123")
+puts "Database reset!"
+
+User.create(name: "Jaimie", username: "Jaimie", password: "password")
+User.create(name: "Will", username: "Will", password: "password")
+User.create(name: "Yana", username: "Yana", password: "password")
+User.create(name: "Matt", username: "Matt", password: "password")
 
 puts "Made users!"
 

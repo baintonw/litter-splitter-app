@@ -1,68 +1,33 @@
-# README
+# Litter-Splitter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to LitterSplitter! A Flatiron School Mod 2 project created by Jaimie and Will.  
 
-Things you may want to cover:
+LittersSplitter is a social networking app used to simulate cat adoption.
 
-* Ruby version
+<br>
 
-* System dependencies
+## Set up 
+---
 
-* Configuration
+To set up, please `fork`, `clone` down the project from Github, and then `cd` into the project.  
 
-* Database creation
+1. Run `bundle install` in your terminal. 
 
-* Database initialization
+2. Run `rails db:migrate`.
 
-* How to run the test suite
+3. Type `rails s` in your terminal to start a developmment server at `localhost:3000`. 
 
-* Services (job queues, cache servers, search engines, etc.)
+<br>
 
-* Deployment instructions
+## Use
+---
 
-* ...
+Visit `https://localhost:3000/litter` to find the project.  
+  
+<br>
 
-THIS IS A README
-THIS IS STILL A README
+Enjoy!
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-potential_adopt = User.find(params[:claim_id])
-  adopt_request = potential_adopt.claims.find(params[:id])
-=======
-=======
->>>>>>> d082addbeb961ddee05c0e37551dffdd78674366
-To-do Friday:
-- "give" cat still showing on user's show page
-- post new cat
-  - need button
-  - need new create_cat_params method with all atributes
-  - need route
-  - how to only allow 300x300px img?
-- make navbar and footer only show when in session
-<<<<<<< HEAD
->>>>>>> d082addbeb961ddee05c0e37551dffdd78674366
-=======
->>>>>>> d082addbeb961ddee05c0e37551dffdd78674366
+---
 
-## CSS ##
-Selectors:
-- tags
-- .classes
-- #IDs
-flexbox
--
-  #grid-flex-image {
-    display: flex;
-    flex-direction: column;
-    }
-- helps you to organize your page into boxes
-- organize things in either a column or a row or grid which does both
-- flexboxes only communicate with their direct children
-- defaults to a row
-- img {
-  width: 100px
-  height: 100px
-  }
-- name classes and IDs in html file and call them with . and # in css file
+©Will Bainton and Jaimie Nguyen
